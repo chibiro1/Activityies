@@ -5,19 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVG Drawing</title>
     <style>
+
             @keyframes sun{
                 0% {cx: 70; cy: 0; fill: lightyellow;}
                 25% {fill: yellow;}
                 50% {fill: orange;}
-                100% {cx: 70; cy: 330; fill: black;}
+                100% {cx: 70; cy: 350; fill: rgb(55, 25, 13);}
+            }
+            @keyframes tree {
+                0% {fill: rgb(1, 53, 1);}
+                25% {fill: rgb(1, 143, 1);}
+                50% {fill: rgb(2, 113, 2);}
+                100% {fill: rgb(0, 48, 0)}
+            }
+            @keyframes sky {
+                0% {fill: midnightblue;}
+                25% {fill: skyblue;}
+                50% {fill: rgb(240, 82, 24);}
+                100% {fill: rgb(14, 14, 64);}
+            }
+
+            @keyframes cloud1 {
+                0% {cx: 360; cy: 50;}
+                25% {cx: 390; cy: 50;}
+                50% {cx: 420; cy: 50;}
+                100% {cx: 390; cy: 50;}
+            }
+
+            @keyframes cloud2 {
+                0% {cx: 330; cy: 50;}
+                25% {cx: 360; cy: 50;}
+                50% {cx: 390; cy: 50;}
+                100% {cx: 360; cy: 50;}
+            }
+
+            @keyframes cloud3 {
+                0% {cx: 390; cy: 50;}
+                25% {cx: 420; cy: 50;}
+                50% {cx: 450; cy: 50;}
+                100% {cx: 420; cy: 50;}
+            }
+
+            @keyframes cloud4 {
+                0% {cx: 100; cy: 110;}
+                25% {cx: 130; cy: 110;}
+                50% {cx: 160; cy: 110;}
+                100% {cx: 100; cy: 110;}
+            }
+
+            @keyframes cloud5 {
+                0% {cx: 130; cy: 110;}
+                25% {cx: 160; cy: 110;}
+                50% {cx: 190; cy: 110;}
+                100% {cx: 130; cy: 110;}
+            }
+
+            @keyframes cloud6 {
+                0% {cx: 70; cy: 110;}
+                25% {cx: 100; cy: 110;}
+                50% {cx: 130; cy: 110;}
+                100% {cx: 70; cy: 110;}
+            }
+            
+            .cloud1 {
+                animation: cloud1 25s infinite;
+            }
+            .cloud2 {
+                animation: cloud2 25s infinite;
+            }
+            .cloud3 {
+                animation: cloud3 25s infinite;
+            }
+            .cloud4 {
+                animation: cloud4 25s infinite;
+            }
+            .cloud5 {
+                animation: cloud5 25s infinite;
+            }
+            .cloud6 {
+                animation: cloud6 25s infinite;
+            }
+
+            .sun {
+                animation: sun 15s infinite;
+            }
+
+            .sky {
+                animation: sky 15s infinite;
+            }
+
+            .tree {
+                animation: tree 15s infinite;
+            }
+
+            .filter{
+                animation: filter 15s infinite;
             }
 
     </style>
 </head>
 <body>
-    <svg width="500" height="500">
+    <svg class="filter" width="500" height="500">
         <!--SKY--->
-         <rect x="" y="0" width="500" height="500" fill="skyblue"/>
+         <rect class="sky" x="" y="0" width="500" height="500" fill="skyblue"/>
 
         <!---SUN--->
        <circle class="sun" cx="50" cy="50" r="35" fill="yellow"  />
@@ -25,22 +115,27 @@
        <!---MOUNTAIN-->
        <polygon points ="100, 300 200, 100 300, 300" fill="peru"/>
        <polygon points ="200, 300 300, 100 400, 300" fill="gray"/>
+       
 
        <!---GROUND-->
        <rect x="0" y="300" width="500" height="200" fill="green"/>
 
        <!--CLOUD-->
-       <circle cx="410" cy="110" r="30" fill="white" />
-       <circle cx="380" cy="110" r="25" fill="white" />
-       <circle cx="440" cy="110" r="22" fill="white" />
+       <circle class="cloud1" cx="410" cy="50" r="30" fill="white" />
+       <circle class="cloud2" cx="380" cy="50" r="25" fill="white" />
+       <circle class="cloud3" cx="440" cy="50" r="22" fill="white" />
+
+       <circle class="cloud4" cx="210" cy="110" r="30" fill="white" />
+       <circle class="cloud5" cx="240" cy="110" r="25" fill="white" />
+       <circle class="cloud6" cx="180" cy="110" r="22" fill="white" />
 
 
        <!--TREE-->
        <rect x="110" y="220" width="30" height="80" fill="brown" />
-       <circle  cx="125" cy="220" r="50" fill="green"/>
+       <circle  class="tree" cx="125" cy="220" r="50" fill="green"/>
 
        <rect x="350" y="220" width="30" height="80" fill="brown" />
-       <circle  cx="365" cy="220" r="50" fill="green"/>
+       <circle  class="tree"cx="365" cy="220" r="50" fill="green"/>
     </svg>
 </body>
 </html>
